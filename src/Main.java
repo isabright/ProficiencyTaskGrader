@@ -55,7 +55,7 @@ public class Main {
             ArrayList<String> word40= new ArrayList<>();
 
             // add all lists to main list
-            ArrayList<ArrayList> lists = new ArrayList<>();
+            ArrayList<ArrayList<String>> lists = new ArrayList<>();
             lists.add(null);
             lists.add(word1);
             lists.add(word2);
