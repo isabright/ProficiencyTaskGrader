@@ -105,7 +105,6 @@ public class Main {
 
             // populate arrays with words from file
             while (wordReader.hasNext()){
-
                 data = wordReader.nextLine();
                 if (data.isEmpty()){
                     continue;
@@ -115,88 +114,24 @@ public class Main {
                     continue;
                 }
                 lists.get(list).add(data);
-
-//                if (list == 1)
-//                    word1.add(data);
-//                if (list == 2)
-//                    word2.add(data);
-//                if (list == 3)
-//                    word3.add(data);
-//                if (list == 4)
-//                    word4.add(data);
-//                if (list == 5)
-//                    word5.add(data);
-//                if (list == 6)
-//                    word6.add(data);
-//                if (list == 7)
-//                    word7.add(data);
-//                if (list == 8)
-//                    word8.add(data);
-//                if (list == 9)
-//                    word9.add(data);
-//                if (list == 10)
-//                    word10.add(data);
-//                if (list == 11)
-//                    word11.add(data);
-//                if (list == 12)
-//                    word12.add(data);
-//                if (list == 13)
-//                    word13.add(data);
-//                if (list == 14)
-//                    word14.add(data);
-//                if (list == 15)
-//                    word15.add(data);
-//                if (list == 16)
-//                    word16.add(data);
-//                if (list == 17)
-//                    word17.add(data);
-//                if (list == 18)
-//                    word18.add(data);
-//                if (list == 19)
-//                    word19.add(data);
-//                if (list == 20)
-//                    word20.add(data);
-//                if (list == 21)
-//                    word21.add(data);
-//                if (list == 22)
-//                    word22.add(data);
-//                if (list == 23)
-//                    word23.add(data);
-//                if (list == 24)
-//                    word24.add(data);
-//                if (list == 25)
-//                    word25.add(data);
-//                if (list == 26)
-//                    word26.add(data);
-//                if (list == 27)
-//                    word27.add(data);
-//                if (list == 28)
-//                    word28.add(data);
-//                if (list == 29)
-//                    word29.add(data);
-//                if (list == 30)
-//                    word30.add(data);
-//                if (list == 31)
-//                    word31.add(data);
-//                if (list == 32)
-//                    word32.add(data);
-//                if (list == 33)
-//                    word33.add(data);
-//                if (list == 34)
-//                    word34.add(data);
-//                if (list == 35)
-//                    word35.add(data);
-//                if (list == 36)
-//                    word36.add(data);
-//                if (list == 37)
-//                    word37.add(data);
-//                if (list == 38)
-//                    word38.add(data);
-//                if (list == 39)
-//                    word39.add(data);
-//                if (list == 40)
-//                    word40.add(data);
             } // end While
+
+            int score = 0;
+            int count = 1;
+            System.out.println("Here are the anomalous responses: ");
+            while (respReader.hasNext()){
+                data = respReader.nextLine();
+                if (lists.get(count).contains(data)) {
+                    ++score;
+                } else {
+                    System.out.println("For word " + count + " participant responded with: " + data);
+                }
+                ++count;
+            }
+
+//            for (int i = 1; i <= 40; ++i){
+//                System.out.println(lists.get(i));
+//            }
 
 
         } catch (Exception e) {
