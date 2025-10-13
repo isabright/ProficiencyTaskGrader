@@ -37,19 +37,31 @@ public class Main {
             } // end While
 
             int score = 0;
-            int count = 1;
-            System.out.println("\nHere are the anomalous responses: \n");
+            //int count = 1;
+            int part = 1;
+
             while (respReader.hasNext()){
-                data = respReader.nextLine();
-                if (containsCaseInsensitive(data, lists.get(count))) {
-                    ++score;
-                } else {
-                    System.out.println("For word " + count + " participant responded with: " + data);
-                }
-                ++count;
+
+                System.out.println("\nHere are the anomalous responses for participant " + part + ": \n");
+                wtr.write("\nHere are the anomalous responses for participant " + part + ": \n\n");
+                for (int i = 1; i <= 40; ++i){
+                    data = respReader.nextLine();
+                    if (containsCaseInsensitive(data, lists.get(i))) {
+                        ++score;
+                    } else {
+                        System.out.println("For word " + i + " participant responded with: " + data);
+                        wtr.write("For word " + i + " participant responded with: " + data + "\n");
+                    }
+                } // end for
+                System.out.println("\nThe score excluding anomolies is: " + score + "\n");
+                System.out.println("---------------------------------------------------------------------");
+                wtr.write("\nThe score excluding anomolies is: " + score + "\n\n");
+                wtr.write("---------------------------------------------------------------------\n");
+                score = 0;
+                ++part;
+
             } // end while
 
-            System.out.println("\nThe score excluding anomolies is: " + score + "\n");
         } catch (Exception e) {
             System.out.print("An error occured: ");
             e.printStackTrace();

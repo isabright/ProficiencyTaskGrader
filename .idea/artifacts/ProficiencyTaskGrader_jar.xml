@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ProficiencyTaskGrader:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProficiencyTaskGrader_jar</output-path>
+    <root id="archive" name="ProficiencyTaskGrader.jar">
+      <element id="module-output" name="ProficiencyTaskGrader" />
+    </root>
+  </artifact>
+</component>
